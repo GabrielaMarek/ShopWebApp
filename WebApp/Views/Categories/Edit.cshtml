@@ -1,0 +1,16 @@
+﻿
+@model Category
+@section title{
+    @if (Model != null){
+        <h3>Category: @Model.Name</h3>
+    }
+}
+
+<form method="post" asp-asp-controller="categories" asp-action="edit">
+    <div class="row mb-3">
+        <label asp-for="Name" class="col-form-label"></label>
+    </div>
+    <div class="col-6">
+        <input type="text" asp-for="Name" class="form-control"/>
+    </div>
+</form>
