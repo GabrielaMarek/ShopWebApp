@@ -18,16 +18,26 @@
 
         public static List<Category> GetCategories() => _categories;
 
-        public static Category GetCategoryById(int categoryId)
+        public static Category? GetCategoryById(int categoryId)
         {
-            return _categories.FirstOrDefault(c => c.CategoryId == categoryId);
+            var category = _categories.FirstOrDefault(c => c.CategoryId == categoryId);
+            if (category != null)
+            {
+                return new Category
+                {
+                    CategoryId = category.CategoryId,
+                    Name = category.Name,
+                    Description = category.Description,
+                };
+            }
+            return null;
         }
 
         public static void UpdateCategory(int categoryId, Category category)
         {
             if (categoryId != category.CategoryId) return;
-            
-            var categoryToUpdate = GetCategoryById(categoryId);
+
+            var categoryToUpdate = _categories.FirstOrDefault(c => c.CategoryId == categoryId);
             if (categoryToUpdate != null)
             {
                 categoryToUpdate.Name = category.Name;
