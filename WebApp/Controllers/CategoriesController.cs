@@ -10,9 +10,10 @@ namespace WebApp.Controllers
             var categories = CategoriesRepository.GetCategories();
             return View(categories);
         }
-        [HttpGet]
         public IActionResult Edit(int? id)
         {
+            ViewBag.Action = "edit";
+
             var category = CategoriesRepository.GetCategoryById(id.HasValue ? id.Value : 0);
 
             return View(category);
@@ -28,7 +29,8 @@ namespace WebApp.Controllers
             return View(category);
         }
         public IActionResult Add()
-        { 
+        {
+            ViewBag.Action = "add";
             return View(); 
         }
 
