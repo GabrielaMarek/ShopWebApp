@@ -20,7 +20,7 @@
 
         public static Category? GetCategoryById(int categoryId)
         {
-            var category = _categories.FirstOrDefault(c => c.CategoryId == categoryId);
+            var category = _categories.FirstOrDefault(x => x.CategoryId == categoryId);
             if (category != null)
             {
                 return new Category

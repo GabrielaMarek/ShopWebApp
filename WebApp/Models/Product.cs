@@ -11,7 +11,7 @@ namespace WebApp.Models
         public int? CategoryId { get; set; }
 
         [Required]
-        public string Name {  get; set; }
+        public string Name {  get; set; } = string.Empty;
 
         [Required]
         public int? Quantity { get; set; }
@@ -19,5 +19,7 @@ namespace WebApp.Models
         [Required]
         [Range (0, int.MaxValue)]
         public double? Price { get; set; }
+
+        public Category? Category { get; set; }
     }
 }
