@@ -8,7 +8,7 @@
             new Product { ProductId = 2, CategoryId = 1, Name = "Cola", Quantity = 300, Price = 2.99},
             new Product { ProductId = 3, CategoryId = 2, Name = "White Bread", Quantity = 200, Price = 0.99},
             new Product { ProductId = 4, CategoryId = 2, Name = "Cinnamon Rols", Quantity = 150, Price = 1.50},
-
+            new Product { ProductId = 5, CategoryId = 3, Name = "Pork Shoulder", Quantity = 25, Price = 10.00},
         };
 
         public static void AddProduct(Product product)
