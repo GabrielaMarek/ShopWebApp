@@ -27,7 +27,7 @@
         @*Product List*@
     </div>
     <br />
-    <div>
+    <div id="productDetailPartial">
         @*Product details*@
     </div>
     @*Sales form*@
@@ -37,12 +37,26 @@
     </div>
 </div>
 
-@section Scripts{
+@section Scripts {
     <script>
         $(function () {
+
             $("#SelectedCategoryId").on("change", function () {
-                $("#productsPartial").load("/products/ProductsByCategoryPartial", {categoryId: $(this).val()});
-            })
+                $("#productsPartial").load("/products/ProductsByCategoryPartial", { categoryId: $(this).val() });
+                $("#productDetailPartial").html("");
+            });
+
+            $("#productsPartial").on('click', '.product-row', function () {
+
+                $('.product-row').removeClass('highlight');
+                $(this).addClass('highlight');
+
+                var productId = $(this).attr('product-id');
+
+                $("#productDetailPartial").load("/sales/SellProductPartial", { productId: productId });
+
+            });
+
         });
     </script>
 }

@@ -4,7 +4,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Supermarket Management</title>
-        <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </head>
     <body>
         <header>
@@ -21,10 +22,10 @@
                             <a class="nav-link active" aria-current="page" href="/home/index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Sales/index">Sales</a>
+                            <a class="nav-link text-dark"  href="/Sales/index">Sales</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/categories/index">Categories</a>
+                            <a class="nav-link text-dark" href="/categories/index">Categories</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="products" asp-action="index">Products</a>
@@ -37,6 +38,7 @@
         <div class="container">
             <div class="pb-3">
                 @RenderSection("title")
+            <hr />
             </div>
             <div>
                 @RenderBody()
