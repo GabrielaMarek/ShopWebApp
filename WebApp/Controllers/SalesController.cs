@@ -10,9 +10,8 @@ namespace WebApp.Controllers
         {
             var salesViewModel = new SalesViewModel
             {
-                Categories = CategoriesRepository.GetCategories()
+                Categories = CategoriesRepository.GetCategories()              
             };
-
             return View(salesViewModel);
         }
 
