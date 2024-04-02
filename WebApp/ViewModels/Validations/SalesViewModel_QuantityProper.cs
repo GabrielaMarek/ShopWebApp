@@ -23,7 +23,7 @@ namespace WebApp.ViewModels.Validations
                     {
                         if(product.Quantity < salesViewModel.QuantityToSell)
                         {
-                            return new ValidationResult($"{product.Name} has a remaining stock of {product.Quantity}.");
+                            return new ValidationResult($"{product.Name} has a remaining stock of {product.Quantity}");
                         }
                     }
                     else
